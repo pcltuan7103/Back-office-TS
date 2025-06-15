@@ -11,13 +11,13 @@ export const headerData = [
         id: 1,
         title: "Dashboard",
         href: "/admin",
-        icon: <LayoutDashboard size={20} />,
+        icon: <LayoutDashboard size={30} />,
     },
     {
         id: 2,
         title: "Users",
         href: "/users",
-        icon: <User size={20} />,
+        icon: <User size={30} />,
     },
 ];
 
@@ -26,7 +26,7 @@ const AdminSidebar = () => {
 
     return (
         <>
-            <div className="fixed top-0 left-0 bg-[#fff] w-[18%] h-full border-r border-shop-light_blue py-2 px-4">
+            <div className="fixed top-0 left-0 bg-[#fff] w-[18%] h-full py-2 px-4">
                 <div className="py-2 w-full">
                     <Link href={"/admin"}>
                         <Logo className="text-[40px]" />
@@ -36,11 +36,16 @@ const AdminSidebar = () => {
                     {headerData.map((item, index) => (
                         <li key={index}>
                             <Button
-                                className={`w-full !capitalize !justify-start flex items-center gap-3 bg-transparent hover:bg-shop-light_blue hover:text-white hover:font-[600] text-shop-light_blue shadow-none text-[20px] font-[500] py-6 hoverEffect ${
+                                className={`w-full !capitalize !justify-start flex items-center gap-3 bg-transparent hover:bg-shop-blue_15 text-darkColor shadow-none text-[20px] font-[500] py-6 rounded-xl hoverEffect ${
                                     pathName === item.href
-                                        ? "!bg-shop-light_blue !text-white !font-[600]"
+                                        ? "!bg-shop-blue_100 !text-white"
                                         : ""
                                 }`}
+                                onClick={() => {
+                                    if (pathName !== item.href) {
+                                        window.location.href = item.href;
+                                    }
+                                }}
                             >
                                 {item.icon} {item.title}
                             </Button>
