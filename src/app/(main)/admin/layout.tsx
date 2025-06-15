@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import "../globals.css";
+import "../../globals.css";
 
 export const metadata: Metadata = {
     title: {
-        template: "$s - Online Shopcart",
-        default: "Online Shopcart",
+        template: "Back Office TShop",
+        default: "Back Office TShop",
     },
-    description: "Online Shopcart, Have everything you need in one place",
+    description: "Back Office TShop",
 };
 
-export default function RootLayout({
+export default function AdminLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
