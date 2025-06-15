@@ -4,7 +4,7 @@ import { Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import { ShoppingCart, Smartphone, User } from "lucide-react";
+import { User } from "lucide-react";
 
 const boxData = [
     {
